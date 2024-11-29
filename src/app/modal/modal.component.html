@@ -1,0 +1,14 @@
+<div class="p-4">
+  <h2 class="text-xl font-bold mb-4">Video del destinatario</h2>
+  <video controls autoplay class="w-full rounded-[.8rem] shadow-lg">
+    <source src="ruta-del-video.mp4" type="video/mp4" />
+    Tu navegador no soporta reproducción de video.
+  </video>
+  <button
+    mat-button
+    class="mt-4 w-full bg-[#8d0004] hover:bg-[#e00619] text-white rounded-[.8rem] py-2"
+    (click)="closeModal()"
+  >
+    Cerrar
+  </button>
+</div>

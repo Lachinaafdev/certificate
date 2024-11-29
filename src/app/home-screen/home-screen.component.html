@@ -1,0 +1,113 @@
+<div
+  class="bg-gray-100 flex items-center justify-center min-h-screen bg-cover bg-center animate-fade-in"
+  style="background-image: url('/assets/bg.png')"
+>
+  <!-- Contenedor principal con borde dorado e imágenes decorativas -->
+  <div
+    class="flex flex-col justify-between h-3/5 w-full max-w-lg px-5 py-9 md:p-12 shadow-lg gold-border decorative-images m-3 animate-slide-up"
+  >
+    @if (certificadoVisible) {
+
+    <!-- Lottie Animation -->
+
+    <ng-lottie
+      [options]="lottieConfig"
+      (animationCreated)="animationCreated($event)"
+      class="lottie-animation lottie-overlay"
+    ></ng-lottie>
+
+    <div class="text-center py-8 relative glow-container">
+      <!-- Título IBEROSTAR con espaciado elegante -->
+      <h1
+        class="text-[1rem] text-center tracking-[1.1rem] text-[#d1b487] uppercase mb-[1.5rem] animate-fade-in"
+        style="font-family: 'Poppins', sans-serif; font-weight: 400"
+      >
+        IBEROSTAR
+      </h1>
+      <div class="h-[5rem]">
+        <div class="relative inline-block">
+          <!-- Título Certificado con Imperial Script -->
+          <span
+            id="certificado"
+            class="block text-[5.2rem] leading-[1rem] text-[#9c8424] opacity-0 animate-slide-in"
+            style="font-family: 'Imperial Script', cursive"
+          >
+            Certificado
+          </span>
+          <!-- Título de Regalo, ajustando la posición a la derecha -->
+          <span
+            id="regalo"
+            class="absolute right-0 top-full transform text-[2.4rem] text-gradient opacity-0 animate-slide-in-delay text-[#9c8424]"
+            style="font-family: 'Imperial Script', cursive"
+          >
+            de regalo
+          </span>
+        </div>
+      </div>
+      <!-- Descripción del premio -->
+      <p
+        class="text-[.8rem] font-serif text-[#d1b487] mb-2 animate-fade-up delay-100"
+      >
+        Eres el ganador del siguiente premio:
+      </p>
+
+      <!-- Premio resaltado -->
+      <p
+        class="text-[1.8rem] font-bold text-[#715b1a] mb-8 animate-fade-up delay-200 border-b-2 border-[#d1b487] pb-2"
+        style="font-family: 'Poppins', sans-serif; font-weight: 400"
+      >
+        Un tour para dos personas.
+      </p>
+
+      <!-- Fecha de validez con animación -->
+      <p
+        class="text-[.8rem] font-serif text-[#d1b487] animate-fade-up delay-300"
+      >
+        Válida desde el 8 de enero hasta el 1 de diciembre de 2025 <br />
+      </p>
+
+      <!-- Restricciones en texto pequeño e itálica con efecto de desvanecimiento -->
+      <p
+        class="text-[.8rem] font-serif text-[#d1b487] italic animate-fade-up delay-400"
+      >
+        Aplican restricciones
+      </p>
+    </div>
+
+    } @else {
+    <!-- Imagen decorativa -->
+    <div
+      class="flex items-center justify-center h-80"
+      (click)="mostrarCertificado()"
+    >
+      <div class="relative">
+        <img
+          src="/assets/gift.png"
+          alt="Gift"
+          class="rounded-xl shadow-lg hover:scale-105 transform transition-transform duration-300 decorative-image-float"
+        />
+      </div>
+    </div>
+    }
+    <!-- Botones -->
+
+    @if (!certificadoVisible) {
+    <div class="mt-6 space-y-4">
+      <button
+        class="w-full py-3 bg-[#8d0004] hover:bg-[#e00619] rounded-[.8rem] text-lg font-medium text-white shadow-md transition duration-300"
+        (click)="openModal()"
+      >
+        Ver el video del destinatario
+      </button>
+    </div>
+    } @else {
+    <div class="mt-6 space-y-4">
+      <button
+        class="w-full py-3 bg-[#8d0004] hover:bg-[#e00619] rounded-[.8rem] text-lg font-medium text-white shadow-md transition duration-300"
+      >
+        Reservar
+      </button>
+    </div>
+    }
+  </div>
+</div>

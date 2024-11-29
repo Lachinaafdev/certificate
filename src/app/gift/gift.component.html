@@ -1,0 +1,16 @@
+<div class="full-screen-container" (animationend)="onAnimationEnd()">
+  <!-- Listón horizontal -->
+  <div class="ribbon horizontal" [ngStyle]="getRibbonStyle('horizontal')"></div>
+
+  <!-- Listón vertical -->
+  <div class="ribbon vertical" [ngStyle]="getRibbonStyle('vertical')"></div>
+
+  <!-- <ng-lottie
+    [options]="options"
+    (animationCreated)="animationCreated($event)"
+    class="lottie-animation"
+  ></ng-lottie> -->
+</div>
+
+<!-- Mensaje sorpresa -->
+<div *ngIf="showSurprise" class="surprise-message"></div>
