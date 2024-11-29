@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'gift', pathMatch: 'full' }, // Redirige a /home si la ruta está vacía
+
+  { path: '**', redirectTo: 'gift' },
   {
     path: 'gift',
 
